@@ -1,0 +1,331 @@
+universe = vanilla
++AccountingGroup = "group_rutgers.mchristos"
+Requirements = (Arch == "X86_64")
+Executable = /cms/mchristos/ANN/Seesaw/2016/92X/run_background.sh
+should_transfer_files = NO
+Notification=never
+
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZGTo2LG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZGTo2LG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZGTo2LG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 ZGTo2LG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZGTo2LG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZGTo2LG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZGTo2LG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.log
+arguments = 3 ZGTo2LG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WWTo2L2Nu_13TeV-powheg/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WWTo2L2Nu_13TeV-powheg/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WWTo2L2Nu_13TeV-powheg/logs/$(Cluster)_output_0.log
+arguments = 3 WWTo2L2Nu_13TeV-powheg
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1/logs/$(Cluster)_output_0.log
+arguments = 3 ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1/logs/$(Cluster)_output_0.log
+arguments = 3 ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1/logs/$(Cluster)_output_0.log
+arguments = 3 ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1/logs/$(Cluster)_output_0.log
+arguments = 3 ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo2L2Nu_13TeV_powheg_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo2L2Nu_13TeV_powheg_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo2L2Nu_13TeV_powheg_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 ZZTo2L2Nu_13TeV_powheg_pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo2L2Nu_13TeV_powheg_pythia8_ext1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo2L2Nu_13TeV_powheg_pythia8_ext1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo2L2Nu_13TeV_powheg_pythia8_ext1/logs/$(Cluster)_output_0.log
+arguments = 3 ZZTo2L2Nu_13TeV_powheg_pythia8_ext1
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo2L2Q_13TeV_powheg_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo2L2Q_13TeV_powheg_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo2L2Q_13TeV_powheg_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 ZZTo2L2Q_13TeV_powheg_pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.log
+arguments = 3 WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2/logs/$(Cluster)_output_0.log
+arguments = 3 WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext3/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext3/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext3/logs/$(Cluster)_output_0.log
+arguments = 3 WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext3
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WmWmJJ_13TeV-powheg-pythia8_TuneCUETP8M1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WmWmJJ_13TeV-powheg-pythia8_TuneCUETP8M1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WmWmJJ_13TeV-powheg-pythia8_TuneCUETP8M1/logs/$(Cluster)_output_0.log
+arguments = 3 WmWmJJ_13TeV-powheg-pythia8_TuneCUETP8M1
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WpWpJJ_13TeV-powheg-pythia8_TuneCUETP8M1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WpWpJJ_13TeV-powheg-pythia8_TuneCUETP8M1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WpWpJJ_13TeV-powheg-pythia8_TuneCUETP8M1/logs/$(Cluster)_output_0.log
+arguments = 3 WpWpJJ_13TeV-powheg-pythia8_TuneCUETP8M1
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WWTo2L2Nu_DoubleScattering_13TeV-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WWTo2L2Nu_DoubleScattering_13TeV-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WWTo2L2Nu_DoubleScattering_13TeV-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 WWTo2L2Nu_DoubleScattering_13TeV-pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 WZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WZTo3LNu_TuneCUETP8M1_13TeV-powheg-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WZTo3LNu_TuneCUETP8M1_13TeV-powheg-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WZTo3LNu_TuneCUETP8M1_13TeV-powheg-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 WZTo3LNu_TuneCUETP8M1_13TeV-powheg-pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo4L_13TeV_powheg_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo4L_13TeV_powheg_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo4L_13TeV_powheg_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 ZZTo4L_13TeV_powheg_pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo4L_13TeV_powheg_pythia8_ext1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo4L_13TeV_powheg_pythia8_ext1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZTo4L_13TeV_powheg_pythia8_ext1/logs/$(Cluster)_output_0.log
+arguments = 3 ZZTo4L_13TeV_powheg_pythia8_ext1
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo2e2mu_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo2e2mu_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo2e2mu_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 GluGluToContinToZZTo2e2mu_13TeV_MCFM701_pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo2e2tau_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo2e2tau_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo2e2tau_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 GluGluToContinToZZTo2e2tau_13TeV_MCFM701_pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo2mu2tau_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo2mu2tau_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo2mu2tau_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 GluGluToContinToZZTo2mu2tau_13TeV_MCFM701_pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo4e_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo4e_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo4e_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 GluGluToContinToZZTo4e_13TeV_MCFM701_pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo4mu_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo4mu_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo4mu_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 GluGluToContinToZZTo4mu_13TeV_MCFM701_pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo4tau_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo4tau_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluToContinToZZTo4tau_13TeV_MCFM701_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 GluGluToContinToZZTo4tau_13TeV_MCFM701_pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WWW_4F_TuneCUETP8M1_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WWW_4F_TuneCUETP8M1_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WWW_4F_TuneCUETP8M1_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 WWW_4F_TuneCUETP8M1_13TeV-amcatnlo-pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WWZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WWZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WWZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 WWZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/WZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 WZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ZZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 ZZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTWJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8_ext1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTWJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8_ext1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTWJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8_ext1/logs/$(Cluster)_output_0.log
+arguments = 3 TTWJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8_ext1
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTWJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8_ext2/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTWJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8_ext2/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTWJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8_ext2/logs/$(Cluster)_output_0.log
+arguments = 3 TTWJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8_ext2
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZToLL_M-1to10_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZToLL_M-1to10_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZToLL_M-1to10_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 TTZToLL_M-1to10_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext1/logs/$(Cluster)_output_0.log
+arguments = 3 TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext1
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext2/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext2/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext2/logs/$(Cluster)_output_0.log
+arguments = 3 TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext2
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext3/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext3/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext3/logs/$(Cluster)_output_0.log
+arguments = 3 TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext3
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/tZq_ll_4f_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/tZq_ll_4f_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/tZq_ll_4f_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 tZq_ll_4f_13TeV-amcatnlo-pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tWll_5f_LO_13TeV_MadGraph_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tWll_5f_LO_13TeV_MadGraph_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ST_tWll_5f_LO_13TeV_MadGraph_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 ST_tWll_5f_LO_13TeV_MadGraph_pythia8
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTTT_TuneCUETP8M2T4_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTTT_TuneCUETP8M2T4_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTTT_TuneCUETP8M2T4_13TeV-amcatnlo-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 TTTT_TuneCUETP8M2T4_13TeV-amcatnlo-pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTWW_TuneCUETP8M2T4_13TeV-madgraph-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTWW_TuneCUETP8M2T4_13TeV-madgraph-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTWW_TuneCUETP8M2T4_13TeV-madgraph-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 TTWW_TuneCUETP8M2T4_13TeV-madgraph-pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTWZ_TuneCUETP8M2T4_13TeV-madgraph-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTWZ_TuneCUETP8M2T4_13TeV-madgraph-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTWZ_TuneCUETP8M2T4_13TeV-madgraph-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 TTWZ_TuneCUETP8M2T4_13TeV-madgraph-pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZZ_TuneCUETP8M2T4_13TeV-madgraph-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZZ_TuneCUETP8M2T4_13TeV-madgraph-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTZZ_TuneCUETP8M2T4_13TeV-madgraph-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 TTZZ_TuneCUETP8M2T4_13TeV-madgraph-pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ttHToNonbb_M125_TuneCUETP8M2_ttHtranche3_13TeV-powheg-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ttHToNonbb_M125_TuneCUETP8M2_ttHtranche3_13TeV-powheg-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/ttHToNonbb_M125_TuneCUETP8M2_ttHtranche3_13TeV-powheg-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 ttHToNonbb_M125_TuneCUETP8M2_ttHtranche3_13TeV-powheg-pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluHToZZTo4L_M125_13TeV_powheg2_JHUgenV6_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluHToZZTo4L_M125_13TeV_powheg2_JHUgenV6_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/GluGluHToZZTo4L_M125_13TeV_powheg2_JHUgenV6_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 GluGluHToZZTo4L_M125_13TeV_powheg2_JHUgenV6_pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/VBF_HToZZTo4L_M125_13TeV_powheg2_JHUgenV6_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/VBF_HToZZTo4L_M125_13TeV_powheg2_JHUgenV6_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/VBF_HToZZTo4L_M125_13TeV_powheg2_JHUgenV6_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 VBF_HToZZTo4L_M125_13TeV_powheg2_JHUgenV6_pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/bbH_HToZZTo4L_M125_13TeV_JHUgenV702_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/bbH_HToZZTo4L_M125_13TeV_JHUgenV702_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/bbH_HToZZTo4L_M125_13TeV_JHUgenV702_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 bbH_HToZZTo4L_M125_13TeV_JHUgenV702_pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/VHToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/VHToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/VHToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 VHToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.log
+arguments = 3 DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2/logs/$(Cluster)_output_0.log
+arguments = 3 DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTJets_Dilept_TuneCUETP8M2T4_13TeV-amcatnloFXFX-pythia8/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTJets_Dilept_TuneCUETP8M2T4_13TeV-amcatnloFXFX-pythia8/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTJets_Dilept_TuneCUETP8M2T4_13TeV-amcatnloFXFX-pythia8/logs/$(Cluster)_output_0.log
+arguments = 3 TTJets_Dilept_TuneCUETP8M2T4_13TeV-amcatnloFXFX-pythia8
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTJets_Dilept_TuneCUETP8M2T4_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTJets_Dilept_TuneCUETP8M2T4_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTJets_Dilept_TuneCUETP8M2T4_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.log
+arguments = 3 TTJets_Dilept_TuneCUETP8M2T4_13TeV-amcatnloFXFX-pythia8_ext1
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTJets_Dilept_TuneCUETP8M2T4_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTJets_Dilept_TuneCUETP8M2T4_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Background/TTJets_Dilept_TuneCUETP8M2T4_13TeV-amcatnloFXFX-pythia8_ext1/logs/$(Cluster)_output_0.log
+arguments = 3 TTJets_Dilept_TuneCUETP8M2T4_13TeV-amcatnloFXFX-pythia8_ext1
+queue

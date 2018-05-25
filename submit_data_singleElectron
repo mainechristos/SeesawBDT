@@ -1,0 +1,56 @@
+universe = vanilla
++AccountingGroup = "group_rutgers.mchristos"
+Requirements = (Arch == "X86_64")
+Executable = /cms/mchristos/ANN/Seesaw/2016/92X/run_data_singleElectron.sh
+should_transfer_files = NO
+Notification=never
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016B-03Feb2017_ver2-v2_MINIAOD/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016B-03Feb2017_ver2-v2_MINIAOD/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016B-03Feb2017_ver2-v2_MINIAOD/logs/$(Cluster)_output_0.log
+arguments = 3 Run2016B-03Feb2017_ver2-v2_MINIAOD
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016C-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016C-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016C-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.log
+arguments = 3 Run2016C-03Feb2017-v1_MINIAOD
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016D-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016D-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016D-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.log
+arguments = 3 Run2016D-03Feb2017-v1_MINIAOD
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016E-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016E-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016E-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.log
+arguments = 3 Run2016E-03Feb2017-v1_MINIAOD
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016F-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016F-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016F-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.log
+arguments = 3 Run2016F-03Feb2017-v1_MINIAOD
+queue
+
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016G-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016G-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016G-03Feb2017-v1_MINIAOD/logs/$(Cluster)_output_0.log
+arguments = 3 Run2016G-03Feb2017-v1_MINIAOD
+queue
+
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016H-03Feb2017_ver2-v1_MINIAOD/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016H-03Feb2017_ver2-v1_MINIAOD/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016H-03Feb2017_ver2-v1_MINIAOD/logs/$(Cluster)_output_0.log
+arguments = 3 Run2016H-03Feb2017_ver2-v1_MINIAOD
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016H-03Feb2017_ver3-v1_MINIAOD/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016H-03Feb2017_ver3-v1_MINIAOD/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Data/SingleElectron/Run2016H-03Feb2017_ver3-v1_MINIAOD/logs/$(Cluster)_output_0.log
+arguments = 3 Run2016H-03Feb2017_ver3-v1_MINIAOD
+queue

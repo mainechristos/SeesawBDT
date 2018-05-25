@@ -1,0 +1,168 @@
+universe = vanilla
++AccountingGroup = "group_rutgers.mchristos"
+Requirements = (Arch == "X86_64")
+Executable = /cms/mchristos/ANN/Seesaw/2016/92X/run_signal.sh
+should_transfer_files = NO
+Notification=never
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0WW/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0WW/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0WW/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA0WW
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0WZ/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0WZ/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0WZ/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA0WZ
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0WH/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0WH/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0WH/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA0WH 
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0ZW/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0ZW/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0ZW/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA0ZW
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0ZZ/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0ZZ/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0ZZ/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA0ZZ
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0ZH/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0ZH/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0ZH/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA0ZH
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0HW/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0HW/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0HW/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA0HW
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0HZ/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0HZ/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0HZ/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA0HZ
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0HH/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0HH/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA0HH/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA0HH
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0WW/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0WW/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0WW/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMA-SIGMA0WW
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0WZ/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0WZ/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0WZ/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMA-SIGMA0WZ
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0WH/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0WH/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0WH/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMA-SIGMA0WH
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0ZW/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0ZW/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0ZW/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMA-SIGMA0ZW
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0ZZ/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0ZZ/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0ZZ/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMA-SIGMA0ZZ
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0ZH/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0ZH/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0ZH/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMA-SIGMA0ZH
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0HW/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0HW/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0HW/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMA-SIGMA0HW
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0HZ/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0HZ/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0HZ/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMA-SIGMA0HZ
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0HH/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0HH/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMA-SIGMA0HH/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMA-SIGMA0HH
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-WW/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-WW/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-WW/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA-WW
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-WZ/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-WZ/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-WZ/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA-WZ
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-WH/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-WH/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-WH/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA-WH
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-ZW/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-ZW/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-ZW/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA-ZW
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-ZZ/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-ZZ/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-ZZ/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA-ZZ
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-ZH/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-ZH/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-ZH/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA-ZH
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-HW/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-HW/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-HW/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA-HW
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-HZ/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-HZ/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-HZ/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA-HZ
+queue 
+
+output = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-HH/logs/$(Cluster)_output_0.out
+error = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-HH/logs/$(Cluster)_output_0.err
+log = /cms/mchristos/ANN/Seesaw/2016/92X/outFiles/SeesawTMVAClassificationApplication1/Signal/SIGMAplusSIGMA-HH/logs/$(Cluster)_output_0.log
+arguments = 3 SIGMAplusSIGMA-HH
+queue 
