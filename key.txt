@@ -1,0 +1,5 @@
+All Background MC (not otherwise specified) - DataType ==1
+MidId/tree in data - DataType==2
+Conversion/Proxy Tree in data - DataType==3
+WZ - DataType==4
+DY/ttbarr MC - DataType==5
