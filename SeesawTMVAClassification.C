@@ -112,10 +112,10 @@ void SeesawTMVAClassification( TString myMethodList = "" )
    // --- Here the preparation phase begins
 
    // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-   TString outfileName( "/cms/mchristos/ANN/Seesaw/2016/92X/class_perf/2017_TMVA_newVars_optimized.root" );
+   TString outfileName( "/cms/mchristos/ANN/Seesaw/2016/92X/class_perf/2017_TMVA_gradBoost_optimized2.root" );
    TFile* outputFile = TFile::Open( outfileName, "RECREATE" );
 
-   TMVA::Factory *factory = new TMVA::Factory( "2017_TMVA_newVars_optimized", outputFile,
+   TMVA::Factory *factory = new TMVA::Factory( "2017_TMVA_gradBoost_optimized2", outputFile,
                                                "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification" );
 
    // Define the input variables that shall be used for the MVA training
@@ -238,7 +238,7 @@ void SeesawTMVAClassification( TString myMethodList = "" )
       Double_t signalWeight     = sig_xsec*sig_getweight;      //calculates signal weight
 
       // You can add an arbitrary number of signal or background trees
-      TString signalExpression = "(9*(1>0))*(Event%9==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0])))) && (((((((Alt$(MuonIsTight[protectedLightLeptonNativeIndex0],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[protectedLightLeptonNativeIndex0],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[protectedLightLeptonNativeIndex1],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[protectedLightLeptonNativeIndex1],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[protectedLightLeptonNativeIndex2],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[protectedLightLeptonNativeIndex2],0.))*(LightLeptonFlavor[2]==1))))))==111))*35867.060";
+      TString signalExpression = "(9*(1>0))*(Event%9==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0])))) && (((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*35867.060";
       factory->SetSignalWeightExpression(signalExpression);
       factory->AddSignalTree    ( signal,      signalWeight/nSignal1 );       //adds signal tree with weight to factory
    }
@@ -248,11 +248,11 @@ void SeesawTMVAClassification( TString myMethodList = "" )
    /////////////////////////////
 
 TString backgroundExpression ="";
-  backgroundExpression += "(dataType==1)*(9*(1>0))*(Event%9==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0])))) && (((((((Alt$(MuonIsTight[protectedLightLeptonNativeIndex0],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[protectedLightLeptonNativeIndex0],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[protectedLightLeptonNativeIndex1],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[protectedLightLeptonNativeIndex1],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[protectedLightLeptonNativeIndex2],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[protectedLightLeptonNativeIndex2],0.))*(LightLeptonFlavor[2]==1))))))==111))*((((((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))*100+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))*10+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1)))*(LightLeptonN[0]==3))+((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[0],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))==0))*100+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[1],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))==0))*10+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[2],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1))==0)))*(LightLeptonN[0]==3)))*(1>0))==111)*35867.060";
+  backgroundExpression += "(dataType==1)*(9*(1>0))*(Event%9==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0])))) && (((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*((((((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))*100+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))*10+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1)))*(LightLeptonN[0]==3))+((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[0],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))==0))*100+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[1],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))==0))*10+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[2],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1))==0)))*(LightLeptonN[0]==3)))*(1>0))==111)*35867.060";
 
-  backgroundExpression +="+(dataType==4)*(9*(1>0))*(Event%9==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0]))))&&(((((((Alt$(MuonIsTight[protectedLightLeptonNativeIndex0],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[protectedLightLeptonNativeIndex0],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[protectedLightLeptonNativeIndex1],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[protectedLightLeptonNativeIndex1],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[protectedLightLeptonNativeIndex2],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[protectedLightLeptonNativeIndex2],0.))*(LightLeptonFlavor[2]==1))))))==111))*(((1>0)*jetWeights_WZ_powheg_2016(JetN[0])))*((((((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))*100+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))*10+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1)))*(LightLeptonN[0]==3))+((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[0],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))==0))*100+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[1],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))==0))*10+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[2],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1))==0)))*(LightLeptonN[0]==3)))*(1>0))==111)*35867.060";
+  backgroundExpression +="+(dataType==4)*(9*(1>0))*(Event%9==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0]))))&&(((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*(((1>0)*jetWeights_WZ_powheg_2016(JetN[0])))*((((((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))*100+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))*10+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1)))*(LightLeptonN[0]==3))+((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[0],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))==0))*100+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[1],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))==0))*10+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[2],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1))==0)))*(LightLeptonN[0]==3)))*(1>0))==111)*35867.060";
 
-  backgroundExpression +="+(dataType==5)*(9*(1>0))*(Event%9==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0]))))&&(((((((Alt$(MuonIsTight[protectedLightLeptonNativeIndex0],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[protectedLightLeptonNativeIndex0],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[protectedLightLeptonNativeIndex1],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[protectedLightLeptonNativeIndex1],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[protectedLightLeptonNativeIndex2],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[protectedLightLeptonNativeIndex2],0.))*(LightLeptonFlavor[2]==1))))))==111))*((((((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))*100+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))*10+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1)))*(LightLeptonN[0]==3))+((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[0],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))==0))*100+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[1],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))==0))*10+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[2],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1))==0)))*(LightLeptonN[0]==3)))*(1>0))==111)*35867.060";
+  backgroundExpression +="+(dataType==5)*(9*(1>0))*(Event%9==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0]))))&&(((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*((((((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))*100+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))*10+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1)))*(LightLeptonN[0]==3))+((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[0],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))==0))*100+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[1],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))==0))*10+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[2],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1))==0)))*(LightLeptonN[0]==3)))*(1>0))==111)*35867.060";
 
   //backgroundExpression+= "+(dataType==2)*(MatrixMethodWeight3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(LightLeptonTightType3D[0]*1000*1000)+(LightLeptonFlavorType3D[0]*1000)+(((LightLeptonFlavor[0]==1)*(Alt$(ElectronJetNoOfConst[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)>11.5))+((LightLeptonFlavor[0]==2)*(Alt$(MuonJetNoOfConst[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)>11.5))+1)*100+(((LightLeptonFlavor[1]==1)*(Alt$(ElectronJetNoOfConst[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)>11.5))+((LightLeptonFlavor[1]==2)*(Alt$(MuonJetNoOfConst[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)>11.5))+1)*10+(((LightLeptonFlavor[2]==1)*(Alt$(ElectronJetNoOfConst[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)>11.5))+((LightLeptonFlavor[2]==2)*(Alt$(MuonJetNoOfConst[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)>11.5))+1),((RecoVertexN*10000)+(LightLeptonPt[0]<70)*1+(LightLeptonPt[0]>70)*2),0))";
 
@@ -918,10 +918,130 @@ TString backgroundExpression ="";
 
    // Boosted Decision Trees
    if (Use["BDTG"]) // Gradient Boost
-   factory->BookMethod( TMVA::Types::kBDT, "Optimized BDT",
-                           "!H:!V:NTrees=10000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=20::BaggedSampleFraction=0.5" );
+   //factory->BookMethod( TMVA::Types::kBDT, "Optimized BDT",
+   //                        "!H:!V:NTrees=2000:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=20:nCuts=10:MinNodeSize=1.0%::BaggedSampleFraction=0.5"  );
+
+   factory->BookMethod( TMVA::Types::kBDT, "BDT",
+                           "!H:!V:NTrees=950:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=100:MaxDepth=6::BaggedSampleFraction=0.5" );
+
+   //ADA BOOSTING
+   /*   
+   factory->BookMethod( TMVA::Types::kBDT, "Bagged Frac .9",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.9" );
+   factory->BookMethod( TMVA::Types::kBDT, "Bagged Frac .7",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.7" );
+   factory->BookMethod( TMVA::Types::kBDT, "Bagged Frac .5",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "Bagged Frac .3",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.3" );
+   factory->BookMethod( TMVA::Types::kBDT, "Bagged Frac .1",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.1" );
+   factory->BookMethod( TMVA::Types::kBDT, "Bagged Frac .01",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.01" );
+         
+      
+   factory->BookMethod( TMVA::Types::kBDT, "Beta .01",
+                         "!H:!V:NTrees=550:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=.01:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "Beta .1",
+                         "!H:!V:NTrees=550:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=.1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "Beta .2",
+                         "!H:!V:NTrees=550:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=.2:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "Beta .5",
+                         "!H:!V:NTrees=550:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=.5:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "Beta .7",
+                         "!H:!V:NTrees=550:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=.7:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "Beta .9",
+                         "!H:!V:NTrees=550:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=.9:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   */
+   /*
+   //ntrees
+   factory->BookMethod( TMVA::Types::kBDT, "150 trees",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "450 trees",
+                         "!H:!V:NTrees=450:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "850 trees",
+                         "!H:!V:NTrees=850:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "1000 trees",
+                         "!H:!V:NTrees=1000:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "2000 trees",
+                         "!H:!V:NTrees=2000:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "10000 trees",
+                         "!H:!V:NTrees=10000:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   //minNode
+   factory->BookMethod( TMVA::Types::kBDT, "1%",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=1.0%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "2.5%",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "5%",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=5.0%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "7.5%",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=7.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "10%",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=10.0%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "20%",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=20.0%::BaggedSampleFraction=0.5" );
+   //depth
+   factory->BookMethod( TMVA::Types::kBDT, "depth 1",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=1:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "depth 3",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "depth 5",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=5:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "depth 10",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=10:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "depth 20",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=20:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "depth 100",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=100:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
    //ncuts
-   /*factory->BookMethod( TMVA::Types::kBDT, "100 cuts",
+   factory->BookMethod( TMVA::Types::kBDT, "1 cuts",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=1:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "2 cuts",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=2:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "10 cuts",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=10:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "20 cuts",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=20:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "50 cuts",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=50:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "100 cuts",
+                         "!H:!V:NTrees=150:Boost_Num=100:BoostType=AdaBoost:Boost_AdaBoostBeta=1:MaxDepth=3:nCuts=100:MinNodeSize=2.5%::BaggedSampleFraction=0.5" );
+   */
+   
+   //GRADIENT BOOSTING
+   //bagged sample frac
+   /*
+   factory->BookMethod( TMVA::Types::kBDT, "Bagged Frac .9",
+                           "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.9" );
+   factory->BookMethod( TMVA::Types::kBDT, "Bagged Frac .8",
+                           "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.8" );
+   factory->BookMethod( TMVA::Types::kBDT, "Bagged Frac .5",
+                           "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "Bagged Frac .3",
+                           "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.3" );
+   factory->BookMethod( TMVA::Types::kBDT, "Bagged Frac .1",
+                           "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.1" );
+   factory->BookMethod( TMVA::Types::kBDT, "Bagged Frac .01",
+                           "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.01" );   
+   
+   
+   //shrinkage
+  factory->BookMethod( TMVA::Types::kBDT, "shrinkage .01",
+                           "!H:!V:NTrees=550:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=.01:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "shrinkage .1",
+                           "!H:!V:NTrees=550:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=.1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "shrinkage .3",
+                           "!H:!V:NTrees=550:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=.3:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "shrinkage .5",
+                           "!H:!V:NTrees=550:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=.5:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "shrinkage .7",
+                           "!H:!V:NTrees=550:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=.7:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "shrinkage 1",
+                           "!H:!V:NTrees=550:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
+   */
+/*
+   //ncuts
+   factory->BookMethod( TMVA::Types::kBDT, "100 cuts",
                            "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=100:MaxDepth=3::BaggedSampleFraction=0.5" );
    factory->BookMethod( TMVA::Types::kBDT, "50 cuts",
                            "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=50:MaxDepth=3::BaggedSampleFraction=0.5" );
@@ -933,9 +1053,9 @@ TString backgroundExpression ="";
                            "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=5:MaxDepth=3::BaggedSampleFraction=0.5" );
    factory->BookMethod( TMVA::Types::kBDT, "1 cut",
                            "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=1:MaxDepth=3::BaggedSampleFraction=0.5" );
-   */
+   
    //depth
-   /*factory->BookMethod( TMVA::Types::kBDT, "depth 1",
+   factory->BookMethod( TMVA::Types::kBDT, "depth 1",
                            "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=1::BaggedSampleFraction=0.5" );
    factory->BookMethod( TMVA::Types::kBDT, "depth 2",
                            "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=2::BaggedSampleFraction=0.5" );
@@ -951,9 +1071,9 @@ TString backgroundExpression ="";
                            "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=20::BaggedSampleFraction=0.5" );
    factory->BookMethod( TMVA::Types::kBDT, "depth 100",
                            "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=100::BaggedSampleFraction=0.5" );
-   */
+   
    //ntrees
-   /*factory->BookMethod( TMVA::Types::kBDT, "150 trees",
+   factory->BookMethod( TMVA::Types::kBDT, "150 trees",
                            "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
    factory->BookMethod( TMVA::Types::kBDT, "450 trees",
                            "!H:!V:NTrees=450:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
@@ -966,8 +1086,42 @@ TString backgroundExpression ="";
    factory->BookMethod( TMVA::Types::kBDT, "10000 trees",
                            "!H:!V:NTrees=10000:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
    */
+   //optimized1
+   /*
+   factory->BookMethod( TMVA::Types::kBDT, "450 trees",
+                           "!H:!V:NTrees=450:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=20::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "850 trees",
+                           "!H:!V:NTrees=850:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=20::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "1000 trees",
+                           "!H:!V:NTrees=1000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=20::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "2000 trees",
+                           "!H:!V:NTrees=2000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=20::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "5000 trees",
+                           "!H:!V:NTrees=5000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=20::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "10000 trees",
+                           "!H:!V:NTrees=10000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=20::BaggedSampleFraction=0.5" );
+   */
+   //optimized2
+   factory->BookMethod( TMVA::Types::kBDT, "depth 1",
+                           "!H:!V:NTrees=1000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=1::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "depth 2",
+                           "!H:!V:NTrees=1000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=2::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "depth 4",
+                           "!H:!V:NTrees=1000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=4::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "depth 6",
+                           "!H:!V:NTrees=1000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=6::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "depth 8",
+                           "!H:!V:NTrees=1000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=8::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "depth 10",
+                           "!H:!V:NTrees=1000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=10::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "depth 20",
+                           "!H:!V:NTrees=1000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=20::BaggedSampleFraction=0.5" );
+   factory->BookMethod( TMVA::Types::kBDT, "depth 100",
+                           "!H:!V:NTrees=1000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=100::BaggedSampleFraction=0.5" );
+                           
+/*
    //minNodePercentage
-   /*factory->BookMethod( TMVA::Types::kBDT, "1%",
+   factory->BookMethod( TMVA::Types::kBDT, "1%",
                            "!H:!V:NTrees=150:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
    factory->BookMethod( TMVA::Types::kBDT, "2.5%",
                            "!H:!V:NTrees=150:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
@@ -978,8 +1132,8 @@ TString backgroundExpression ="";
    factory->BookMethod( TMVA::Types::kBDT, "20%",
                            "!H:!V:NTrees=150:MinNodeSize=20.0%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
    factory->BookMethod( TMVA::Types::kBDT, "10%",
-                           "!H:!V:NTrees=150:MinNodeSize=30.0%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );*/
-   
+                           "!H:!V:NTrees=150:MinNodeSize=30.0%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
+   */
 // For an example of the category classifier usage, see: TMVAClassificationCategory
 
    // --------------------------------------------------------------------------------------------------
