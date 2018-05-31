@@ -112,10 +112,10 @@ void SeesawTMVAClassification( TString myMethodList = "" )
    // --- Here the preparation phase begins
 
    // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-   TString outfileName( "/cms/mchristos/ANN/Seesaw/2016/92X/class_perf/2017_TMVA_gradBoost_optimized2.root" );
+   TString outfileName( "/cms/mchristos/ANN/Seesaw/2016/92X/class_perf/2017_TMVA_gradBoost_optimized3.root" );
    TFile* outputFile = TFile::Open( outfileName, "RECREATE" );
 
-   TMVA::Factory *factory = new TMVA::Factory( "2017_TMVA_gradBoost_optimized2", outputFile,
+   TMVA::Factory *factory = new TMVA::Factory( "2017_TMVA_gradBoost_optimized3", outputFile,
                                                "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification" );
 
    // Define the input variables that shall be used for the MVA training
@@ -238,7 +238,7 @@ void SeesawTMVAClassification( TString myMethodList = "" )
       Double_t signalWeight     = sig_xsec*sig_getweight;      //calculates signal weight
 
       // You can add an arbitrary number of signal or background trees
-      TString signalExpression = "(9*(1>0))*(Event%9==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0])))) && (((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*35867.060";
+      TString signalExpression = "(2*(1>0))*(Event%2==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0])))) && (((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*35867.060";
       factory->SetSignalWeightExpression(signalExpression);
       factory->AddSignalTree    ( signal,      signalWeight/nSignal1 );       //adds signal tree with weight to factory
    }
@@ -248,11 +248,19 @@ void SeesawTMVAClassification( TString myMethodList = "" )
    /////////////////////////////
 
 TString backgroundExpression ="";
-  backgroundExpression += "(dataType==1)*(9*(1>0))*(Event%9==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0])))) && (((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*((((((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))*100+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))*10+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1)))*(LightLeptonN[0]==3))+((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[0],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))==0))*100+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[1],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))==0))*10+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[2],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1))==0)))*(LightLeptonN[0]==3)))*(1>0))==111)*35867.060";
+backgroundExpression += "(dataType==1)*(2*(1>0))*(Event%2==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0])))) && (((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*35867.060";
 
-  backgroundExpression +="+(dataType==4)*(9*(1>0))*(Event%9==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0]))))&&(((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*(((1>0)*jetWeights_WZ_powheg_2016(JetN[0])))*((((((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))*100+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))*10+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1)))*(LightLeptonN[0]==3))+((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[0],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))==0))*100+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[1],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))==0))*10+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[2],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1))==0)))*(LightLeptonN[0]==3)))*(1>0))==111)*35867.060";
+  backgroundExpression +="+(dataType==4)*(2*(1>0))*(Event%2==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0]))))&&(((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*(((1>0)*jetWeights_WZ_powheg_2016(JetN[0])))*35867.060";
 
-  backgroundExpression +="+(dataType==5)*(9*(1>0))*(Event%9==1)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0]))))&&(((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*((((((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))*100+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))*10+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1)))*(LightLeptonN[0]==3))+((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[0],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))==0))*100+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[1],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))==0))*10+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[2],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1))==0)))*(LightLeptonN[0]==3)))*(1>0))==111)*35867.060";
+  backgroundExpression +="+(dataType==5)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0]))))&&(((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*((((((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))*100+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))*10+(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1)))*(LightLeptonN[0]==3))+((((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[0],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[0],999))),99.))<0.1))==0))*100+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[1],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[1],999))),99.))<0.1))==0))*10+((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenPhotonDr[2],999))),99.)<0.1&&(((Alt$(((1>0)*(Alt$(LightLeptonMatchedPromptGenLeptonDr[2],999))),99.))<0.1))==0)))*(LightLeptonN[0]==3)))*(1>0))<111)*35867.060";
+
+ backgroundExpression +="+(dataType==6)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0]))))&&(((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*35867.060";
+
+ backgroundExpression +="+(dataType==7)*((pileupWeightsOffXsecMinus5(GenPileUpInteractionsTrue[0]))&&((trigEffSF3D(LightLeptonPt[0], LightLeptonPt[1], LightLeptonPt[2], LightLeptonEta[0], LightLeptonEta[1], LightLeptonEta[2], LightLeptonFlavorType3D[0])))&&((leptonSF3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(((RecoVertexN[0])*1000)+LightLeptonFlavorType3D[0]))))&&(((((((Alt$(MuonIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)==1)*(LightLeptonFlavor[0]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0.))*(LightLeptonFlavor[0]==1)))*100+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)==1)*(LightLeptonFlavor[1]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0.))*(LightLeptonFlavor[1]==1)))*10+(((Alt$(MuonIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)==1)*(LightLeptonFlavor[2]==2)+(Alt$(ElectronIsTight[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0.))*(LightLeptonFlavor[2]==1))))))==111))*35867.060";
+
+
+
+
 
   //backgroundExpression+= "+(dataType==2)*(MatrixMethodWeight3D(LightLeptonPt[0],LightLeptonEta[0],LightLeptonPt[1],LightLeptonEta[1],LightLeptonPt[2],LightLeptonEta[2],(LightLeptonTightType3D[0]*1000*1000)+(LightLeptonFlavorType3D[0]*1000)+(((LightLeptonFlavor[0]==1)*(Alt$(ElectronJetNoOfConst[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)>11.5))+((LightLeptonFlavor[0]==2)*(Alt$(MuonJetNoOfConst[(LightLeptonNativeIndex[0]*(LightLeptonNativeIndex[0]>=0))],0)>11.5))+1)*100+(((LightLeptonFlavor[1]==1)*(Alt$(ElectronJetNoOfConst[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)>11.5))+((LightLeptonFlavor[1]==2)*(Alt$(MuonJetNoOfConst[(LightLeptonNativeIndex[1]*(LightLeptonNativeIndex[1]>=0))],0)>11.5))+1)*10+(((LightLeptonFlavor[2]==1)*(Alt$(ElectronJetNoOfConst[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)>11.5))+((LightLeptonFlavor[2]==2)*(Alt$(MuonJetNoOfConst[(LightLeptonNativeIndex[2]*(LightLeptonNativeIndex[2]>=0))],0)>11.5))+1),((RecoVertexN*10000)+(LightLeptonPt[0]<70)*1+(LightLeptonPt[0]>70)*2),0))";
 
@@ -260,19 +268,19 @@ TString backgroundExpression ="";
 
    factory->SetBackgroundWeightExpression(backgroundExpression);
 
-   Double_t back_xsec1 = 117.864*0.11;
+   Double_t back_xsec1 = 117.864;
    Double_t back_xsec2 = 87.31*0.21;
    Double_t back_xsec3 = 87.31*0.79;
    Double_t back_xsec4 = 117.864*0.89; 
    Double_t back_xsec5 = 12.178;
    Double_t back_xsec6 = 19.56*0.62;
-   Double_t back_xsec7 = 19.56*0.38;
+   Double_t back_xsec7 = 19.56;
    Double_t back_xsec8 = 19.56*0.63;
-   Double_t back_xsec9 = 19.56*0.37;
-   Double_t back_xsec10 = 0.564*0.16;
+   Double_t back_xsec9 = 19.56;
+   Double_t back_xsec10 = 0.564;
    Double_t back_xsec11 = 0.564*0.84;
    Double_t back_xsec12 = 3.22;
-   Double_t back_xsec13 = 510.6*0.19;
+   Double_t back_xsec13 = 510.6;
    Double_t back_xsec14 = 510.6*0.34;
    Double_t back_xsec15 = 510.6*0.47;
    Double_t back_xsec16 = 0.007868;
@@ -280,7 +288,7 @@ TString backgroundExpression ="";
    Double_t back_xsec18 = 0.1703;
    Double_t back_xsec19 = 5.606;
    Double_t back_xsec20 = 4.42965;
-   Double_t back_xsec21 = 1.256*1.1*0.07;
+   Double_t back_xsec21 = 1.256*1.1;
    Double_t back_xsec22 = 1.256*1.1*0.93;
    Double_t back_xsec23 = 0.003194*1.7;
    Double_t back_xsec24 = 0.003194*1.7;
@@ -292,10 +300,10 @@ TString backgroundExpression ="";
    Double_t back_xsec30 = 0.1651;
    Double_t back_xsec31 = 0.05565;
    Double_t back_xsec32 = 0.01398;
-   Double_t back_xsec33 = 0.2043*0.45;
+   Double_t back_xsec33 = 0.2043;
    Double_t back_xsec34 = 0.2043*0.55;
    Double_t back_xsec35 = 0.0493;
-   Double_t back_xsec36 = 0.2529*0.15;
+   Double_t back_xsec36 = 0.2529;
    Double_t back_xsec37 = 0.2529*0.44;
    Double_t back_xsec38 = 0.2529*0.41;
    Double_t back_xsec39 = 0.09418;
@@ -314,7 +322,7 @@ TString backgroundExpression ="";
    Double_t back_xsec51 = 5765.4*0.81;
    Double_t back_xsec52 = 18610*0.61;
    Double_t back_xsec53 = 18610*0.39;
-   Double_t back_xsec54 = 87.31*0.21;
+   Double_t back_xsec54 = 87.31;
    Double_t back_xsec55 = 87.31*0.79;
 
 
@@ -355,8 +363,8 @@ TString backgroundExpression ="";
    EventCount4 = (TH1I*)back_input4->Get("veryLooseDileptonEventFilter/EventCount/EventCounter");
    double n4 = EventCount4->GetBinContent(1);
    Double_t backgroundWeight4 = back_xsec4/n4;
-   factory->AddBackgroundTree( background4, backgroundWeight4 );
-   std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input4->GetName() <<       std::endl;
+   //factory->AddBackgroundTree( background4, backgroundWeight4 );
+   //std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input4->GetName() <<       std::endl;
 
    TH1I *EventCount5= new TH1I();
    TString back_name5 = "/cms/mchristos/ANN/Seesaw/2016/92X/MC_notTTbarDY/WWTo2L2Nu_13TeV-powheg/analysisTree.root";
@@ -375,8 +383,8 @@ TString backgroundExpression ="";
    EventCount6 = (TH1I*)back_input6->Get("veryLooseDileptonEventFilter/EventCount/EventCounter");
    double n6 = EventCount6->GetBinContent(1);
    Double_t backgroundWeight6 = back_xsec6/n6;
-   factory->AddBackgroundTree( background6, backgroundWeight6 );
-   std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input6->GetName() <<       std::endl;
+   //factory->AddBackgroundTree( background6, backgroundWeight6 );
+   //std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input6->GetName() <<       std::endl;
 
    TH1I *EventCount7= new TH1I();
    TString back_name7 = "/cms/mchristos/ANN/Seesaw/2016/92X/MC_notTTbarDY/ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1/analysisTree.root";
@@ -395,8 +403,8 @@ TString backgroundExpression ="";
    EventCount8 = (TH1I*)back_input8->Get("veryLooseDileptonEventFilter/EventCount/EventCounter");
    double n8 = EventCount8->GetBinContent(1);
    Double_t backgroundWeight8 = back_xsec8/n8;
-   factory->AddBackgroundTree( background8, backgroundWeight8 );
-   std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input8->GetName() <<       std::endl;
+   //factory->AddBackgroundTree( background8, backgroundWeight8 );
+   //std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input8->GetName() <<       std::endl;
 
    TH1I *EventCount9= new TH1I();
    TString back_name9 = "/cms/mchristos/ANN/Seesaw/2016/92X/MC_notTTbarDY/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1/analysisTree.root";
@@ -425,8 +433,8 @@ TString backgroundExpression ="";
    EventCount11 = (TH1I*)back_input11->Get("veryLooseDileptonEventFilter/EventCount/EventCounter");
    double n11 = EventCount11->GetBinContent(1);
    Double_t backgroundWeight11 = back_xsec11/n11;
-   factory->AddBackgroundTree( background11, backgroundWeight11 );
-   std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input11->GetName() <<       std::endl;
+   //factory->AddBackgroundTree( background11, backgroundWeight11 );
+   //std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input11->GetName() <<       std::endl;
 
    TH1I *EventCount12= new TH1I();
    TString back_name12 = "/cms/mchristos/ANN/Seesaw/2016/92X/MC_notTTbarDY/ZZTo2L2Q_13TeV_powheg_pythia8/analysisTree.root";
@@ -455,8 +463,8 @@ TString backgroundExpression ="";
    EventCount14 = (TH1I*)back_input14->Get("veryLooseDileptonEventFilter/EventCount/EventCounter");
    double n14 = EventCount14->GetBinContent(1);
    Double_t backgroundWeight14 = back_xsec14/n14;
-   factory->AddBackgroundTree( background14, backgroundWeight14 );
-   std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input14->GetName() <<       std::endl;
+   //factory->AddBackgroundTree( background14, backgroundWeight14 );
+   //std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input14->GetName() <<       std::endl;
 
    TH1I *EventCount15= new TH1I();
    TString back_name15 = "/cms/mchristos/ANN/Seesaw/2016/92X/MC_notTTbarDY/WGToLNuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext3/analysisTree.root";
@@ -465,8 +473,8 @@ TString backgroundExpression ="";
    EventCount15 = (TH1I*)back_input15->Get("veryLooseDileptonEventFilter/EventCount/EventCounter");
    double n15 = EventCount15->GetBinContent(1);
    Double_t backgroundWeight15 = back_xsec15/n15;
-   factory->AddBackgroundTree( background15, backgroundWeight15 );
-   std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input15->GetName() <<       std::endl;
+   //factory->AddBackgroundTree( background15, backgroundWeight15 );
+   //std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input15->GetName() <<       std::endl;
 
    TH1I *EventCount16= new TH1I();
    TString back_name16 = "/cms/mchristos/ANN/Seesaw/2016/92X/MC_notTTbarDY/WmWmJJ_13TeV-powheg-pythia8_TuneCUETP8M1/analysisTree.root";
@@ -535,8 +543,8 @@ TString backgroundExpression ="";
    EventCount22 = (TH1I*)back_input22->Get("veryLooseDileptonEventFilter/EventCount/EventCounter");
    double n22 = EventCount22->GetBinContent(1);
    Double_t backgroundWeight22 = back_xsec22/n22*0.95;
-   factory->AddBackgroundTree( background22, backgroundWeight22 );
-   std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input22->GetName() <<       std::endl;
+   //factory->AddBackgroundTree( background22, backgroundWeight22 );
+   //std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input22->GetName() <<       std::endl;
 
    TH1I *EventCount23= new TH1I();
    TString back_name23 = "/cms/mchristos/ANN/Seesaw/2016/92X/MC_notTTbarDY/GluGluToContinToZZTo2e2mu_13TeV_MCFM701_pythia8/analysisTree.root";
@@ -655,8 +663,8 @@ TString backgroundExpression ="";
    EventCount34 = (TH1I*)back_input34->Get("veryLooseDileptonEventFilter/EventCount/EventCounter");
    double n34 = EventCount34->GetBinContent(1);
    Double_t backgroundWeight34 = back_xsec34/n34;
-   factory->AddBackgroundTree( background34, backgroundWeight34 );
-   std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input34->GetName() <<       std::endl;
+   //factory->AddBackgroundTree( background34, backgroundWeight34 );
+   //std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input34->GetName() <<       std::endl;
 
    TH1I *EventCount35= new TH1I();
    TString back_name35 = "/cms/mchristos/ANN/Seesaw/2016/92X/MC_notTTbarDY/TTZToLL_M-1to10_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/analysisTree.root";
@@ -685,8 +693,8 @@ TString backgroundExpression ="";
    EventCount37 = (TH1I*)back_input37->Get("veryLooseDileptonEventFilter/EventCount/EventCounter");
    double n37 = EventCount37->GetBinContent(1);
    Double_t backgroundWeight37 = back_xsec37/n37;
-   factory->AddBackgroundTree( background37, backgroundWeight37 );
-   std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input37->GetName() <<       std::endl;
+   //factory->AddBackgroundTree( background37, backgroundWeight37 );
+   //std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input37->GetName() <<       std::endl;
 
    TH1I *EventCount38= new TH1I();
    TString back_name38 = "/cms/mchristos/ANN/Seesaw/2016/92X/MC_notTTbarDY/TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext3/analysisTree.root";
@@ -695,8 +703,8 @@ TString backgroundExpression ="";
    EventCount38 = (TH1I*)back_input38->Get("veryLooseDileptonEventFilter/EventCount/EventCounter");
    double n38 = EventCount38->GetBinContent(1);
    Double_t backgroundWeight38 = back_xsec38/n38;
-   factory->AddBackgroundTree( background38, backgroundWeight38 );
-   std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input38->GetName() <<       std::endl;
+   //factory->AddBackgroundTree( background38, backgroundWeight38 );
+   //std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input38->GetName() <<       std::endl;
 
    TH1I *EventCount39= new TH1I();
    TString back_name39 = "/cms/mchristos/ANN/Seesaw/2016/92X/MC_notTTbarDY/tZq_ll_4f_13TeV-amcatnlo-pythia8/analysisTree.root";
@@ -870,8 +878,8 @@ TString backgroundExpression ="";
    EventCount55 = (TH1I*)back_input55->Get("veryLooseDileptonEventFilter/EventCount/EventCounter");
    double n55 = EventCount55->GetBinContent(1);
    Double_t backgroundWeight55 = back_xsec55/n55;
-   factory->AddBackgroundTree( background55, backgroundWeight55 );
-   std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input55->GetName() <<       std::endl;
+   //factory->AddBackgroundTree( background55, backgroundWeight55 );
+   //std::cout << "--- TMVAClassification       : Using Background input file: "<< back_input55->GetName() <<       std::endl;
 
    
 
@@ -914,7 +922,7 @@ TString backgroundExpression ="";
 
 
    factory->PrepareTrainingAndTestTree( mycuts, mycutb,
-                                        "nTrain_Signal=61690:nTrain_Background=2016120:SplitMode=Random:NormMode=NumEvents:!V" );
+                                        "nTrain_Signal=0:nTrain_Background=0:SplitMode=Random:NormMode=NumEvents:!V" );
 
    // Boosted Decision Trees
    if (Use["BDTG"]) // Gradient Boost
@@ -1087,8 +1095,8 @@ TString backgroundExpression ="";
                            "!H:!V:NTrees=10000:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=1:nCuts=20:MaxDepth=3::BaggedSampleFraction=0.5" );
    */
    //optimized1
-   /*
-   factory->BookMethod( TMVA::Types::kBDT, "450 trees",
+   
+   /*factory->BookMethod( TMVA::Types::kBDT, "450 trees",
                            "!H:!V:NTrees=450:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=20::BaggedSampleFraction=0.5" );
    factory->BookMethod( TMVA::Types::kBDT, "850 trees",
                            "!H:!V:NTrees=850:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=20::BaggedSampleFraction=0.5" );
@@ -1102,6 +1110,7 @@ TString backgroundExpression ="";
                            "!H:!V:NTrees=10000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=20::BaggedSampleFraction=0.5" );
    */
    //optimized2
+/*
    factory->BookMethod( TMVA::Types::kBDT, "depth 1",
                            "!H:!V:NTrees=1000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=1::BaggedSampleFraction=0.5" );
    factory->BookMethod( TMVA::Types::kBDT, "depth 2",
@@ -1118,7 +1127,7 @@ TString backgroundExpression ="";
                            "!H:!V:NTrees=1000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=20::BaggedSampleFraction=0.5" );
    factory->BookMethod( TMVA::Types::kBDT, "depth 100",
                            "!H:!V:NTrees=1000:MinNodeSize=1.0%:BoostType=Grad:Shrinkage=1:nCuts=10:MaxDepth=100::BaggedSampleFraction=0.5" );
-                           
+                        */   
 /*
    //minNodePercentage
    factory->BookMethod( TMVA::Types::kBDT, "1%",
